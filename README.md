@@ -23,24 +23,14 @@ Follow these steps to install the project:
    ```bash
    docker-compose up --build
    
-3. In project folder "CurrencyAppSymfony" open PHP container and install composer.
-   ```bash
-   docker exec -it symfony-php-container bash
-     composer install
-   
-4. Change API Key to yours from (https://app.freecurrencyapi.com/dashboard) 
+3. Change API Key to yours from (https://app.freecurrencyapi.com/dashboard) 
    ```bash
     File to change, in root folder: .env.dev:
     Line to change: CURRENCY_API_KEY=YOUR_KEY
-   
-5. Run migration
-   ```bash
-   docker exec -it symfony-php-container bash
-     php bin/console doctrine:migrations:diff
-     php bin/console doctrine:migrations:migrate
 
 ## Usage
 ### * In order to run the async process, you need to run the consumer (no need to run the consumer for sync messages)
+### * The watch-pair command will be executed every minute as scheduled by Crontab.
 ### * Execute commands in Docker PHP container
     docker exec -it symfony-php-container bash
     
