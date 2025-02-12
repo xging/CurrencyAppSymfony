@@ -16,6 +16,10 @@ services:
     container_name: symfony-php-container
     networks:
       - app_network
+    command: sh -c "composer install --no-interaction && \
+      php bin/console doctrine:schema:update --force && \
+      php-fpm -D && \
+      supercronic /etc/crontab"
 
   nginx:
     image: nginx:latest

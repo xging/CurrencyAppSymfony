@@ -18,7 +18,7 @@ class WatchPairService implements CurrencyRateConsoleInterface
     public function execute(array $args = []): void
     {
         if (count($args) > 0) {
-            echo "*** Usage: php consoleApp.php watch-pair\n";
+            echo "*** Usage: php bin/console app:watch-pair\n";
             return;
         }
 
@@ -29,12 +29,17 @@ class WatchPairService implements CurrencyRateConsoleInterface
     
     private function startWatching(): void
     {
-        while ($this ->isRunning) {
-            echo "*** Starting to watch currency pairs...\n";
-            $this->pairProcessor->processAllPairs();
 
-            echo "*** Waiting for 60 seconds...\n";
-            sleep(60);
-        }
+        echo "*** Starting to watch currency pairs...\n";
+            $this->pairProcessor->processAllPairs();
+        echo "*** Waiting for 60 seconds...\n";
+
+        // while ($this ->isRunning) {
+        //     echo "*** Starting to watch currency pairs...\n";
+        //     $this->pairProcessor->processAllPairs();
+
+        //     echo "*** Waiting for 60 seconds...\n";
+        //     sleep(60);
+        // }
     }
 }

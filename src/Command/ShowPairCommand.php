@@ -57,7 +57,7 @@ class ShowPairCommand extends Command
 
         $message = new ShowPairMessage('ShowPairCommand', $argsFromConsole);
         $result = $this->handle($message);
-        $output->writeln("Результат обработки: {$result}");
+        $output->writeln("{$result}");
 
         // $this->showPairRateService->execute($argsFromConsole);
         return Command::SUCCESS;

@@ -1,0 +1,5 @@
+#Run every minute
+*/1 * * * *  php /var/www/html/bin/console app:watch-pair >> /var/www/html/var/log/cron.log 2>&1
+
+# Run everyday 12-00
+#0 12 * * *  php /var/www/html/bin/console app:watch-pair >> /var/www/html/var/log/cron.log 2>&1

@@ -49,7 +49,7 @@ class WatchPairCommand extends Command
 
         $message = new WatchPairMessage('WatchPairCommand');
         $result = $this->handle($message);
-        $output->writeln("Результат обработки: {$result}");
+        $output->writeln("{$result}");
 
         // $this->watchPairService->execute([]);
         return Command::SUCCESS;
